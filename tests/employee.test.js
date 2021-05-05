@@ -3,6 +3,7 @@ const Employee = require("../lib/employee");
 
 describe("Employee class", () => {
     it("Get name should return the name of the employee", () => {
-        expect(getName(1).tobe("Dan"));
+        const kenobi = new Employee("Kenobi")
+        expect(kenobi.getName(1)).toBe("Obi");
     });
 });
