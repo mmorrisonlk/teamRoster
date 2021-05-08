@@ -4,7 +4,7 @@ const Intern = require("../lib/intern");
 
 describe("Intern class", () => {
     it("Get school should return the shcool of the Intern", () => {
-        const kenobi = new Intern("dummythiccU")
+        const kenobi = new Intern("name", "id", "email", "dummythiccU")
         expect(kenobi.getSchool()).toBe("dummythiccU")
     });
 

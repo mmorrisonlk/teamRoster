@@ -4,7 +4,7 @@ const Engineer = require("../lib/engineer");
 
 describe("Engineer class", () => {
     it("Get github should return the github of the engineer", () => {
-        const kenobi = new Engineer("yeet.git")
+        const kenobi = new Engineer("name", "id", "email", "yeet.git")
         expect(kenobi.getGithub()).toBe("yeet.git")
     });
 

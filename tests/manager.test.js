@@ -4,7 +4,7 @@ const Manager = require("../lib/Manager");
 
 describe("Manager class", () => {
     it("Get role should return Manager", () => {
-        const kenobi = new Manager()
+        const kenobi = new Manager("name", "id", "email")
         expect(kenobi.getRole()).toBe("Manager");
     });
 });
