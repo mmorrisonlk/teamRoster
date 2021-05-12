@@ -1,0 +1,16 @@
+<div class="tile is-4 is-parent">
+            <article class="tile is-child notification is-danger">
+            <p class="title">{{employeeName}}</p>
+            <p class="subtitle">{{employeeId}}</p>
+            <p>{{employeeEmail}}</p>
+            <p>{{employeeRole}}</p>
+            {{#if internSchool}}
+            <p>{{internSchool}}</p>
+            {{/if}}
+            {{#if github}}
+            <p>{{github}}</p>
+            {{/if}}
+            {{#if officeNumber}}
+            <p>{{officeNumber}}</p>
+            {{/if}}
+          </div>

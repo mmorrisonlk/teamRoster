@@ -1,26 +1,10 @@
+const Handlebars = require("handlebars")
+const fs = require("fs")
+
 function teamBuilder(data) {
-    return ` 
-${data.employeeName}
-
-
-${data.employeeId}
-
-
-${data.employeeEmail}
-
-
-${data.employeeRole}
-
-
-${data.officeNumber}
-
-
-${data.github}
-
-
-${data.internSchool}
-
-`
+    console.log(fs.readFileSync('./src/employees.handlebars', {encoding: "utf8"}))
+    const template = Handlebars.compile(fs.readFileSync('./src/employees.handlebars', {encoding: "utf8"}));
+    return template(data);
 
 }
 

@@ -45,6 +45,6 @@ inquirer
     },
   ])
   .then((data) => {
-    fs.writeFile('teamroster.md', teamBuilder(data), (err) => err ? console.log(err) : console.log('Success!')
+    fs.appendFile('employeeList.html', teamBuilder(data), (err) => err ? console.log(err) : console.log(data)
     );
   })
