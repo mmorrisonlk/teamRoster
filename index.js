@@ -1,4 +1,6 @@
 const inquirer = require("inquirer");
+const fs = require('fs')
+const teamBuilder = require('./src/teamhtml')
 
 inquirer
   .prompt([
@@ -23,32 +25,26 @@ inquirer
         name: 'employeeRole',
         choices: ['Employee', 'Intern', 'Engineer', 'Manager']
     },
-    
-    // switch (true) {
-    //     case "Intern":
-            
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
-    // {
-    //     type: 'input',
-    //     message: 'Any usage restrictions for your project?',
-    //     name: 'usage',
-    // },
-    // {
-    //     type: 'input',
-    //     message: 'Any guidelines for contributing to your project?',
-    //     name: 'contribution',
-    // },
-    // {
-    //     type: 'input',
-    //     message: 'What tests will you be using?',
-    //     name: 'testingInfo',
-    // },
+    {
+        type: 'input',
+        message: 'What office number has been assigned to this Manager?',
+        name: 'officeNumber',
+        when: (answers) => answers.employeeRole === 'Manager'
+    },
+    {
+        type: 'input',
+        message: 'What is the Engineer\'s github?',
+        name: 'github',
+        when: (answers) => answers.employeeRole === 'Engineer'
+    },
+    {
+        type: 'input',
+        message: 'What school is the intern from?',
+        name: 'internSchool',
+        when: (answers) => answers.employeeRole === 'Intern'
+    },
   ])
   .then((data) => {
-    fs.writeFile('README.md', markyMarkdown(data), (err) => err ? console.log(err) : console.log('Success!')
+    fs.writeFile('teamroster.md', teamBuilder(data), (err) => err ? console.log(err) : console.log('Success!')
     );
   })
